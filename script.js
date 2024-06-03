@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         const income = parseFloat(incomeInput.value);
+        if (isNaN(income) || income <= 0) {
+            balanceOutput.textContent = 'Wprowadź poprawny przychód.';
+            statusOutput.textContent = '';
+            statusOutput.style.color = 'black';
+            return;
+        }
+
         const totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0);
         const balance = income - totalExpenses;
 
