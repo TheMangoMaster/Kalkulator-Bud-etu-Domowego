@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0);
         const balance = income - totalExpenses;
 
-        balanceOutput.textContent = Twój bilans: ${balance.toFixed(2)} zł;
+        balanceOutput.textContent = `Twój bilans: ${balance.toFixed(2)} zł`;
 
         if (balance > 0) {
             statusOutput.textContent = 'Masz nadwyżkę budżetową.';
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         expenses.forEach((expense, index) => {
             const li = document.createElement('li');
-            li.textContent = ${expense.category}: ${expense.amount.toFixed(2)} zł;
+            li.textContent = `${expense.category}: ${expense.amount.toFixed(2)} zł`;
 
             const removeButton = document.createElement('button');
             removeButton.textContent = 'Usuń';
